@@ -1,0 +1,119 @@
+.nav-bar{
+    background-color: white;
+    width: 100%;
+    height: 60px;
+}
+
+body{
+    background-color: #f8f9fc;
+}
+
+.table_header{
+    font-size: 30px;
+    color: #001730;
+    margin-bottom: 25px;
+    margin-left: 10px;
+    margin-top: -50px;
+}
+
+.table_footer{
+    font-size: 20px;
+    color: #001730;
+    margin-left: 10px;
+    margin-top: 25px;
+}
+
+.delete_btn{
+    color: #ff3b30 !important;
+    cursor: pointer;
+}
+
+.signIn_btn{
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: 176px;
+    font-size: 19px;
+    background-color: #0a84ff;
+    color: #fff;
+}
+
+.forgot_btn{
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: 176px;
+    font-size: 19px;
+    background-color: #ff375f;
+    color: #fff;
+}
+
+.nav-link{
+    height: 100%;
+    font-size: 30px;
+    color: #bfbfbf;
+    font-weight: 500;
+    cursor: pointer;
+}
+.nav-link-active{
+    height: 100%;
+    font-size: 30px;
+    font-weight: 700;
+    color: #00dc80;
+}
+
+.main-body{
+    background-color: #001730;;
+}
+
+.nav{
+    height: 100%;
+    padding-left: 2%;
+}
+
+
+.rows{
+    font-size: 22px;
+    text-align: center;
+    color: #616161;
+}
+
+.row1-col1{
+    background-color: #f8f9fc;
+}
+
+.card{
+    border: 0.5px solid rgba(0,0,0,0.1);
+    padding: 20px 50px;
+    box-shadow: 8px 8px 5px #e9eef7;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    height: 300px;
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+form{
+    width: 100%;
+    height: 100%;
+}
+
+.card_header{
+    font-size: 35px;
+}
+
+input:focus{
+    outline: 0 none;
+    border-color: #64d2ff;
+    box-shadow: 0 0px 5px #64d2ff;
+}
+
+.input_field{
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
