@@ -13,6 +13,38 @@
                 <script src="https://cdn.tailwindcss.com"></script>
                 <link rel="stylesheet" href="./scss/hotelList.scss"></link>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                
+                <!-- <script type="text/javascript">
+                     $(document).ready(function () {
+                        $('.view_detalis').on('click',function(e) {
+                            
+                            var clicked_id = this.id;
+                            $.ajax('view_hotel.php', {
+                                type: 'POST',  // http method
+                                data: { id: clicked_id },  // data to submit
+                                success: function (response) {
+                                    // alert(response);
+                                },
+                                error: function () {
+                                        console.log("Error Occured");
+                                }
+                            });
+
+                            // $.ajax('view_hotel.php', {
+                            //     type: 'POST',  // http method
+                            //     data: { id: clicked_id },  // data to submit
+                            //     success: function (response) {
+
+                            //     },
+                            //     error: function () {
+                            //             console.log("Error Occured");
+                            //     }
+                            // });
+                        });
+                     });
+                </script> -->
             </head>
             <body>
                 <div class="">
@@ -60,9 +92,11 @@
                                                         </div>
                                                         <div class="col-span-3 rows" style="text-align: left;">' . $row['country'] . '
                                                         </div>
-                                                        <div class="col-span-1 rows view_detalis">
-                                                            <i class="fa fa-eye"></i>
-                                                        </div>
+                                                        <form action="view_hotel.php" method="post">
+                                                            <button class="col-span-1 rows view_detalis" name="hotel_id" value="'. $row['id'] .'">
+                                                                <i class="fa fa-eye"></i>
+                                                            </button>
+                                                        </form>
                                                     </div>';
                                             }
                                         }

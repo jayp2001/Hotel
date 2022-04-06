@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Sofia');
+@import url('https://fonts.googleapis.com/css?family=Amita');
+@import url('https://fonts.googleapis.com/css?family=Aclonica');
+
 .navi-bar{
     background-color: white;
     width: 100%;
@@ -39,11 +43,11 @@ body{
     border-radius: 10px;
     background-color: #0080FF;
     color: #fff;
+    margin-bottom: 30px;
 }
 
 .changeImg_btn{
     cursor: pointer;
-    text-align: center !important;
     padding: 10px 15px;
     border-radius: 10px;
     background-color: #ff375f;
@@ -109,13 +113,27 @@ a:hover{
     background-color: #f8f9fc !important;
 }
 
+.carouselCard{
+    padding: 5px;
+    border: 0.5px solid rgba(0,0,0,0.1);
+    box-shadow: 10px 10px 5px #e9eef7;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    height:410px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
 .table_row{
+    padding-top: 20px;
+    padding-bottom: 10px;
     border: 0.5px solid rgba(0,0,0,0.1);
     box-shadow: 8px 8px 5px #e9eef7;
     background-color: #fff;
     border-radius: 5px;
     width: 100%;
-    height:60px;
+    min-height:80px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -181,16 +199,45 @@ label{
     height: 400px;
     margin-bottom: 20px;
 }
-
-.profile{
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    background-color: black;
+#carouselExampleControls{
+    width: 100%;
+    height: 300px;
 }
 
-.logout{
-    font-size: 18px;
-    color: #ff375f;
-    margin: auto;
+.carousel{
+    width: 100%;
+    height: 400px;
+}
+
+.view_detalis{
+    color: #007aff !important;
+    cursor: pointer;
+}
+
+.title{
+    color: #001730;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Sofia';
+    margin-bottom: 30px;
+}
+
+.title_review{
+    color: #001730;
+    text-align: center;
+    font-size: 45px;
+    // font-family: 'Sofia';
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.rows{
+    font-size: 28px;
+    text-align: center;
+    color: #616161;
+}
+
+.nameField{
+    text-align: center !important;
+    font-weight: bold !important;
 }

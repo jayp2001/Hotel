@@ -15,7 +15,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Document</title>
                 <script src="https://cdn.tailwindcss.com"></script>
-                <link rel="stylesheet" href="./scss/mainPage.scss"></link>
+                <link rel="stylesheet" href="./scss/mainpage.scss"></link>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -24,14 +24,15 @@
                 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                 <script type="text/javascript">
                     function open_file(){
                         document.getElementById('img2').click();
                     }
                     function handleImgChange(){
-                        const img = document.getElementById('img2').files[0];
-                        document.getElementById('img_preview2').src = window.URL.createObjectURL(img)
+                        var img = document.getElementById('img2').files[0];
+                        document.getElementById('img_preview_edit').src = window.URL.createObjectURL(img)
                     }
 
                     function open_img(){
@@ -103,6 +104,18 @@
                                     Review
                                 </a>
                             </div>
+                            <div class="col-span-3 flex justify-end gap-7">
+                                <a href="profile.php">
+                                    <div class="profile">
+                                        
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-span-1 flex justify-end gap-7">
+                                <a href="action/logout.php" class="logout">
+                                    LOGOUT
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="grid">
@@ -168,17 +181,18 @@
                             </div>
                             
                             <!-- Modal body -->
+                            <form name="hotelDetail" enctype="multipart/form-data" method="post" action="action/addHotel.php">
                             <div class="modal-body">
                                 <div class="grid grid-rows-1">
                                     <div class="grid grid-cols-12">
                                         <div class="col-span-8 col-start-3 imgDiv">
                                             <img class="img_preview" id="img_preview" src="">
-                                            <div class="grid"><button class="uploadImg_btn" for="#img1" onclick="open_img()">Upload Image</button></div>
-                                            <input type="file" onchange="handleImgUpload()" hidden id="img1" accept="image/*">
+                                            <div class="grid"><div class="uploadImg_btn" for="#img1" onclick="open_img()" style="text-align:center">Upload Image</div></div>
+                                            <input type="file" onchange="handleImgUpload()" hidden id="img1" name="new_hotel_img[]" accept="image/*" multiple>
                                         </div>
                                     </div>
                                 </div>
-                                <form name="hotelDetail">
+                                
                                     <div class="grid grid-rows-4">
                                         <div class="grid grid-cols-12">
                                             <div class="col-span-8 col-start-3">
@@ -194,18 +208,30 @@
                                         </div>
                                         <div class="grid grid-cols-12">
                                             <div class="col-span-8 col-start-3">
+                                                <label>Email</label>
+                                                <input type="text" placeholder="Enter Email" class="input_field" name="email"/>
+                                            </div>
+                                        </div>
+                                        <div class="grid grid-cols-12">
+                                            <div class="col-span-8 col-start-3">
                                                 <label>Address</label>
-                                                <textarea rows="3"name="address" class="input_area" name="address" placeholder="Enter Address" form="hotelDetail"></textarea>
+                                                <textarea rows="3" class="input_area" name="address" placeholder="Enter Address"></textarea>
                                             </div> 
                                         </div>
                                         <div class="grid grid-cols-12">
                                             <div class="col-span-8 col-start-3">
+                                                <label>Country</label>
+                                                <input type="text" placeholder="Enter Hotel Country" class="input_field" name="country"/>
+                                            </div>
+                                        </div>
+                                        <div class="grid grid-cols-12">
+                                            <div class="col-span-8 col-start-3">
                                                 <label>Details</label>
-                                                <textarea rows="3"name="address" class="input_area" placeholder="Enter Hotel Details" name="details" form="hotelDetail"></textarea>
+                                                <textarea rows="3" class="input_area" placeholder="Enter Hotel Details" name="details"></textarea>
                                             </div> 
                                         </div>
                                     </div>
-                                </form>
+                                
                             </div>
                             
                             <!-- Modal footer -->
@@ -213,7 +239,7 @@
                                 <div><button class="insert_btn" data-toggle="modal" data-target="#myModal">Add Hotel</button></div>
                                 <button type="button" class="close_btn" data-dismiss="modal">Close</button>
                             </div>
-                            
+                        </form> 
                         </div>
                         </div>
                     </div>
@@ -227,15 +253,15 @@
                             </div>
                             
                             <!-- Modal body -->
-                            <form name="editHotelForm" method="post" action="action/editHotel.php">
+                            <form name="editHotelForm" enctype="multipart/form-data" method="post" action="action/editHotel.php">
                             <div class="modal-body">
                           
                                 <div class="grid grid-rows-1">
                                     <div class="grid grid-cols-12">
                                         <div class="col-span-8 col-start-3 imgDiv">
                                             <img class="img_preview" id="img_preview_edit" src="">
-                                            <div class="grid"><button class="changeImg_btn" for="#img2" onclick="open_file()">Change Image</button></div>
-                                                <input type="file" onchange="handleImgChange()" hidden id="img2" name="image" accept="image/*">
+                                            <div class="grid"><div class="changeImg_btn" style="text-align : center !important;" for="#img2" onclick="open_file()">Change Image</div></div>
+                                                <input type="file" onchange="handleImgChange()" hidden id="img2" value="" name="hotel_image" accept="image/*">
                                                 <input type="hidden" name="hotel_id" value="" id="hotel">
                                         </div>
                                     </div>
@@ -260,13 +286,13 @@
                                         <div class="grid grid-cols-12">
                                             <div class="col-span-8 col-start-3">
                                                 <label>Address</label>
-                                                <textarea rows="3"name="address" id="address_model" class="input_area" name="address" placeholder="Enter Address" form="hotelDetail"></textarea>
+                                                <textarea rows="3" id="address_model" class="input_area" name="hotel_address" placeholder="Enter Address" ></textarea>
                                             </div> 
                                         </div>
                                         <div class="grid grid-cols-12">
                                             <div class="col-span-8 col-start-3">
                                                 <label>Details</label>
-                                                <textarea rows="3"name="address" id="details_model" class="input_area" placeholder="Enter Hotel Details" name="details" form="hotelDetail"></textarea>
+                                                <textarea rows="3" id="details_model" class="input_area" placeholder="Enter Hotel Details" name="details" ></textarea>
                                             </div> 
                                         </div>
                                     </div>
@@ -275,11 +301,12 @@
                             
                             <!-- Modal footer -->
                             <div class="modal-footer">
-                            <div><button class="modelSave_btn" data-toggle="modal" data-target="#myModal" onclick = "jay()">Save</button></div>
-                            <button type="button" class="close_btn" data-dismiss="modal">Close</button>
+                                <div>
+                                    <button class="modelSave_btn" data-toggle="modal" data-target="#myModal">Save</button></div>
+                                    <button type="button" class="close_btn" data-dismiss="modal">Close</button>
+                                </div>
                             </div>
                             </form>
-                        </div>
                         </div>
                     </div>
                 </div>
