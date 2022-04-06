@@ -63,7 +63,7 @@
                                                             Name 
                                                         </div>
                                                         <div class="col-span-7 rows" style="text-align: center;">
-                                                            ' . $row['surname'] . '
+                                                            ' . $row['name'] . '
                                                         </div>
                                                     </div>
                                                     <div class="table_row grid grid-cols-12 justify-between content-center">
