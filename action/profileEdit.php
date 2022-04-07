@@ -15,7 +15,6 @@
         $result = mysqli_query($conn , $setData);
         echo $conn -> error;
         header("Location: ../profile.php");
-        
     } else {
         header("Location: ../profile.php");
     }

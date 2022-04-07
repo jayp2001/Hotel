@@ -39,6 +39,7 @@
                 $_SESSION['uname'] = $row['uname'];
                 $_SESSION['password'] = $row['password'];
                 $_SESSION['rights'] = $row['rights'];
+                $_SESSION['img'] = $row['img'];
                 
                 if($row['rights'] === '0'){
                     header ("Location: ../home.php");

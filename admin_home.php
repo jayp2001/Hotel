@@ -16,6 +16,7 @@
                 <title>Document</title>
                 <script src="https://cdn.tailwindcss.com"></script>
                 <link rel="stylesheet" href="./scss/mainpage.scss"></link>
+                <link rel="stylesheet" href="./scss/profile_logout.scss"></link>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -94,20 +95,26 @@
                     <div class="navi-bar grid grid-rows-1">
                         <div class="grid grid-cols-12 content-center navi">
                             <div class="col-span-8 flex justify-start gap-7">
-                                <a href="#" class="navi-link-active">
-                                    Home
-                                </a>
-                                <a class="navi-link">
-                                    Hotels
-                                </a>
-                                <a class="navi-link">
-                                    Review
-                                </a>
+                                <?php 
+                                    if($_SESSION['rights'] === '1') {
+                                        echo '<a href="admin_home.php" class="navi-link-active">
+                                                Home
+                                            </a>
+                                            <a class="navi-link" href="home.php">
+                                                Hotels
+                                            </a>';
+                                    }
+                                    else {
+                                        echo '<a href="home.php" class="navi-link-active">
+                                                Home
+                                            </a>';
+                                    }
+                                ?>
                             </div>
                             <div class="col-span-3 flex justify-end gap-7">
                                 <a href="profile.php">
                                     <div class="profile">
-                                        
+                                     <?php echo '<img class="profile" src="data:image;base64,'.base64_encode($_SESSION['img']).'">'; ?>
                                     </div>
                                 </a>
                             </div>

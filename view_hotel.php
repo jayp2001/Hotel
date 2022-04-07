@@ -24,6 +24,7 @@
                 <title>Document</title>
                 <script src="https://cdn.tailwindcss.com"></script>
                 <link rel="stylesheet" href="./scss/hotelDetails.scss"></link>
+                <link rel="stylesheet" href="./scss/profile_logout.scss"></link>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <link href='https://fonts.googleapis.com/css?family' rel='stylesheet'>
 
@@ -46,6 +47,18 @@
                                 </a>
                                 <a class="navi-link">
                                     Review
+                                </a>
+                            </div>
+                            <div class="col-span-3 flex justify-end gap-7">
+                                <a href="profile.php">
+                                    <div class="profile">
+                                     <?php echo '<img class="profile" src="data:image;base64,'.base64_encode($_SESSION['img']).'">'; ?>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-span-1 flex justify-end gap-7">
+                                <a href="action/logout.php" class="logout">
+                                    LOGOUT
                                 </a>
                             </div>
                         </div>

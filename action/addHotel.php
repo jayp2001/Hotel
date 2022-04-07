@@ -27,10 +27,10 @@
                     $isInserted = mysqli_query($conn , $insertImg);
                 }
             }
-            
+            header("Location: ../admin_home.php");
         }
-
     }
+    header("Location: ../admin_home.php");
 
         // if ($_FILES['hotel_image']["name"] !== '') {
         //     $image = $_FILES['hotel_image']['tmp_name'];

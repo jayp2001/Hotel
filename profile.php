@@ -39,7 +39,7 @@
                             $result = mysqli_query($conn , $getData);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) === 1) {
-                                
+                                $_SESSION['img'] = $row['img'];
                                 echo '
                                     <div class="grid">
                                         <div class="grid grid-rows-1">

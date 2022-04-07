@@ -15,6 +15,7 @@
             $result = mysqli_query($conn , $sql);
         }
         if($result) {
+
             header("Location: ../admin_home.php");
         }
     }

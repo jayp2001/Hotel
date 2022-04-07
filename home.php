@@ -12,6 +12,7 @@
                 <title>Document</title>
                 <script src="https://cdn.tailwindcss.com"></script>
                 <link rel="stylesheet" href="./scss/hotelList.scss"></link>
+                <link rel="stylesheet" href="./scss/profile_logout.scss"></link>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -51,14 +52,34 @@
                     <div class="nav-bar grid grid-rows-1">
                         <div class="grid grid-cols-12 content-center nav">
                             <div class="col-span-8 flex justify-start gap-7">
-                                <a href="#" class="nav-link-active">
-                                    Home
+                                <?php 
+                                    if($_SESSION['rights'] === '1') {
+                                        echo '
+                                            <a href="admin_home.php" class="nav-link">
+                                                Home
+                                            </a>
+                                            <a href="home.php" class="nav-link-active">
+                                                Hotels
+                                            </a>';
+                                    }
+                                    else {
+                                        echo '  <a href="home.php" class="nav-link-active">
+                                                Home
+                                            </a>';
+                                    }
+                                ?>
+                                
+                            </div>
+                            <div class="col-span-3 flex justify-end gap-7">
+                                <a href="profile.php">
+                                    <div class="profile">
+                                     <?php echo '<img class="profile" src="data:image;base64,'.base64_encode($_SESSION['img']).'">'; ?>
+                                    </div>
                                 </a>
-                                <a class="nav-link">
-                                    Hotels
-                                </a>
-                                <a class="nav-link">
-                                    Review
+                            </div>
+                            <div class="col-span-1 flex justify-end gap-7">
+                                <a href="action/logout.php" class="logout">
+                                    LOGOUT
                                 </a>
                             </div>
                         </div>
