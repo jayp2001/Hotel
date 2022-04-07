@@ -33,21 +33,54 @@
                     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
                     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+                    <!-- <script type="text/javascript">
+                        $(document).ready(function () {
+                            $('.insert_btn').on('click',function (e) {
+                                alert('jay');
+                                // let id = this.value;
+                                // $.ajax('addReview.php', {
+                                //     type: 'POST',  // http method
+                                //     data: { hotel_id: id },
+                                //     // success: function (response) {
+                                //     //     // location.reload();
+                                //     // },
+                                //     // error: function () {
+                                //     //     console.log("Error Occured")
+                                //     // }
+                                // });
+                            })
+                        });
+                    </script> -->
             </head>
             <body>
                 <div>
                     <div class="navi-bar grid grid-rows-1">
                         <div class="grid grid-cols-12 content-center navi">
                             <div class="col-span-8 flex justify-start gap-7">
-                                <a href="#" class="navi-link">
-                                    Home
-                                </a>
-                                <a class="navi-link-active">
-                                    Hotel
-                                </a>
-                                <a class="navi-link">
-                                    Review
-                                </a>
+                                <?php 
+                                    if($_SESSION['rights'] === '1') {
+                                        echo '<a href="admin_home.php" class="navi-link">
+                                                Home
+                                            </a>
+                                            <a class="navi-link" href="home.php">
+                                                Hotels
+                                            </a>
+                                            <a  class="navi-link-active">
+                                                Hotel
+                                            </a>';
+                                    }
+                                    else {
+                                        echo '
+                                            <a class="navi-link" href="home.php">
+                                                Home
+                                            </a>
+                                            <a class="navi-link-active">
+                                                Hotel
+                                            </a>';
+                                    }
+                                ?>
                             </div>
                             <div class="col-span-3 flex justify-end gap-7">
                                 <a href="profile.php">
@@ -155,7 +188,7 @@
                                         }
                                     ?>
                                     <div class="table_footer flex justify-end">
-                                        <div><button class="insert_btn" data-toggle="modal" data-target="#addHotel">Add Review</button></div>
+                                        <form action="addReview.php" method="post"><button class="insert_btn" name="hotel_id" value=<?php echo $row['id']?>>Add Review</button></form>
                                     </div>
                                 </div>
                             </div>

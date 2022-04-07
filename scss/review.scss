@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css?family=Sofia');
+@import url('https://fonts.googleapis.com/css?family=Amita');
+@import url('https://fonts.googleapis.com/css?family=Aclonica');
+
+.navi-bar{
+    background-color: white;
+    width: 100%;
+    height: 60px;
+}
+
+body{
+    background-color: #f8f9fc !important;
+}
+
+.table_header{
+    font-size: 30px;
+    color: #001730;
+    margin-bottom: 25px;
+    margin-left: 10px;
+    margin-top: -50px;
+}
+
+.table_footer{
+    font-size: 20px;
+    color: #001730;
+    margin-left: 10px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.delete_btn{
+    color: #ff3b30 !important;
+    cursor: pointer;
+}
+
+.edit_btn{
+    color: #32ADE6 !important;
+    cursor: pointer;
+}
+
+.insert_btn{
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #0080FF;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.changeImg_btn{
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #ff375f;
+    color: #fff;
+}
+
+.uploadImg_btn{
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #00dc80;
+    color: #fff;
+}
+
+.modelSave_btn{
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #34c759;
+    color: #fff;
+}
+
+button:focus{
+    outline:0 none;
+}
+
+.navi-link{
+    height: 100%;
+    font-size: 30px;
+    color: #bfbfbf;
+    font-weight: 500;
+    cursor: pointer;
+}
+.navi-link-active{
+    height: 100%;
+    font-size: 30px;
+    font-weight: 700;
+    color: #00dc80;
+}
+
+a:hover{
+    color: #00dc80 !important;
+    text-decoration: none !important;
+}
+
+.main-body{
+    background-color: #001730;;
+}
+
+.navi{
+    height: 100%;
+    padding-left: 2%;
+}
+
+
+.rows{
+    font-size: 22px;
+    text-align: center;
+    color: #616161;
+}
+
+.rows_title{
+    padding-top: 3px;
+    font-size: 22px;
+    text-align: center;
+    color: #616161;
+}
+
+.row1-col1{
+    background-color: #f8f9fc !important;
+}
+
+.carouselCard{
+    padding: 5px;
+    border: 0.5px solid rgba(0,0,0,0.1);
+    box-shadow: 10px 10px 5px #e9eef7;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    height:410px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.table_row{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border: 0.5px solid rgba(0,0,0,0.1);
+    box-shadow: 8px 8px 5px #e9eef7;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    min-height:80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.close_btn{
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #ff375f !important;
+    &:hover{
+        background-color: #ff375f !important;
+    }
+}
+
+.modelTitleAdd{
+    font-size: 28px;
+    color: #0080FF;
+}
+
+.modelTitleEdit{
+    font-size: 28px;
+    color: #32ADE6;
+}
+
+input:focus,select:focus, textarea:focus{
+    outline: 0 none;
+    border-color: #64d2ff;
+    box-shadow: 0 0px 5px #64d2ff;
+}
+
+select{
+    background: white !important;
+    text-shadow: none;
+}
+
+.input_field{
+    background-color: white !important;
+    background: white !important;
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.input_area{
+    width: 100%;
+    padding-left: 10px;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.img_preview{
+    width: 100%;
+    height: 80%;
+    margin-bottom: 7px;
+}
+
+label{
+    font-size: 25px;
+}
+
+.imgDiv{
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+#carouselExampleControls{
+    width: 100%;
+    height: 300px;
+}
+
+.carousel{
+    width: 100%;
+    height: 400px;
+}
+
+.view_detalis{
+    color: #007aff !important;
+    cursor: pointer;
+}
+
+.title{
+    color: #001730;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Sofia';
+    margin-bottom: 30px;
+}
+
+.title_review{
+    color: #001730;
+    text-align: center;
+    font-size: 45px;
+    // font-family: 'Sofia';
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.rows{
+    font-size: 28px;
+    text-align: center;
+    color: #616161;
+}
+
+.nameField{
+    text-align: center !important;
+    font-weight: bold !important;
+}
+
+.rowTitle{
+    padding-top: 10px;
+}
+
+
+.saveBtn{
+    width: 200px;
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #00dc80;
+    color: #fff;
+}
+.cancelBtn{
+    margin-left: 20px;
+    width: 200px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #ff375f;
+    color: #fff;
+}

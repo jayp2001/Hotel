@@ -12,6 +12,7 @@
                     <title>Document</title>
                     <script src="https://cdn.tailwindcss.com"></script>
                     <link rel="stylesheet" href="./scss/profile.scss"></link>
+                    <link rel="stylesheet" href="./scss/profile_logout.scss"></link>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
                 </head>
@@ -20,14 +21,29 @@
                         <div class="navi-bar grid grid-rows-1">
                             <div class="grid grid-cols-12 content-center navi">
                                 <div class="col-span-8 flex justify-start gap-7">
-                                    <a href="#" class="navi-link">
-                                        Home
-                                    </a>
-                                    <a class="navi-link">
-                                        Hotels
-                                    </a>
-                                    <a class="navi-link">
-                                        Review
+                                     <?php 
+                                    if($_SESSION['rights'] === '1') {
+                                        echo '
+                                            <a href="admin_home.php" class="navi-link">
+                                                Home
+                                            </a>
+                                            <a href="home.php" class="navi-link">
+                                                Hotels
+                                            </a>';
+                                    }
+                                    else {
+                                        echo '  <a href="home.php" class="navi-link">
+                                                Home
+                                            </a>';
+                                    }
+                                ?>
+                                </div>
+                                <div class="col-span-3 flex justify-end gap-7">
+                                
+                                </div>
+                                <div class="col-span-1 flex justify-end gap-7">
+                                    <a href="action/logout.php" class="logout">
+                                        LOGOUT
                                     </a>
                                 </div>
                             </div>
