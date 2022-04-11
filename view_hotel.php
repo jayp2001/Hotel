@@ -1,12 +1,18 @@
 <?php 
     session_start();
     include "action/db_conn.php";
-    if(isset($_POST['hotel_id']) && $_POST['hotel_id'] !== '') {
-        $getPwd = "SELECT * FROM hotel WHERE id='$_POST[hotel_id]'";
+        
+    if((isset($_POST['hotel_id']) && $_POST['hotel_id'] !== '') || isset($_GET['id'])) {
+        if(isset($_POST['hotel_id'])){
+            $hotelId = $_POST['hotel_id'];
+        } else {
+            $hotelId = $_GET['id'];
+        }
+        $getPwd = "SELECT * FROM hotel WHERE id='$hotelId'";
         $result = mysqli_query($conn , $getPwd);
-        $getReview = "SELECT * FROM reviews WHERE hotel_id='$_POST[hotel_id]'";
+        $getReview = "SELECT * FROM reviews WHERE hotel_id='$hotelId'";
         $review = mysqli_query($conn , $getReview);
-        $getImg = "SELECT * FROM image WHERE id='$_POST[hotel_id]'";
+        $getImg = "SELECT * FROM image WHERE id='$hotelId'";
         $img = mysqli_query($conn , $getImg);
         if($result ){
             $row = mysqli_fetch_assoc($result);

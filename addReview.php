@@ -2,8 +2,6 @@
     session_start();
     include "action/db_conn.php";
      if(isset($_POST['hotel_id'])){
-
-     
         $getPwd = "SELECT * FROM hotel WHERE id='$_POST[hotel_id]'";
         $result = mysqli_query($conn , $getPwd);
         $getImg = "SELECT * FROM image WHERE id='$_POST[hotel_id]'";
@@ -115,7 +113,7 @@
                                                     Reviews
                                                 </div>
                                             </div>
-                                            <form action="rewiewAdd.php" method="post">
+                                            <form action="action/reviewAdd.php" method="post">
                                                 <div class="table_row grid grid-cols-12 justify-between content-center">
                                                     <div class="col-span-3 rows nameField rowTitle" style="text-align: left;">
                                                         Discription
@@ -124,7 +122,7 @@
                                                         
                                                     </div>
                                                     <div class="col-span-5 rows">
-                                                        <input type="text" placeholder="Enter Your Review Discription" class="input_field"/>
+                                                        <input type="text" placeholder="Enter Your Review Discription" name="discription" class="input_field"/>
                                                     </div>
                                                 </div>
                                                 <div class="table_row grid grid-cols-12 justify-between content-center">
@@ -135,7 +133,7 @@
                                                         
                                                     </div>
                                                     <div class="col-span-5 rows">
-                                                        <select placeholder="Enter User Name" class="input_field form-select">
+                                                        <select placeholder="Select Rating" name="rating" class="input_field form-select">
                                                             <option value="worst" selected>Worst</option>
                                                             <option value="poor">Poor</option>
                                                             <option value="ok">Ok</option>
@@ -145,7 +143,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="table_footer flex justify-end">
-                                                    <div><button class="saveBtn">Save</button></div>
+                                                    <div><button class="saveBtn" name="submit" value=<?php echo $row['id'];?>>Save</button></div>
                                                     </form>
                                                     <div><button class="cancelBtn">Cancel</button></div>
                                                 </div>
